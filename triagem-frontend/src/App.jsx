@@ -3,12 +3,12 @@ import imagem from '../img/logo.png'
 import { useNavigate } from 'react-router-dom';
 
 const App = () => {
-  
+
   const navigate = useNavigate()
 
   return (
     <>
-      <Box sx={{
+      <Box onClick={() => navigate('/pesquisar')} sx={{
         backgroundColor: 'red',
         display: 'flex',
         justifyContent: 'center',
@@ -17,8 +17,7 @@ const App = () => {
         width: '100vw',
         height: '100vh'
       }}>
-        <Avatar src={imagem} sx={{ width: 100, height: 100, mb: 2}} ></Avatar>
-        <Button onClick={() => navigate('/pesquisar') }>Navegar</Button>
+        <Avatar src={imagem} sx={{ width: 100, height: 100, mb: 2 }} ></Avatar>
         <Typography variant='h2' color='#fff'>Seja Bem vindo!</Typography>
         <Typography variant='h4' color='#fff'>Toque na tela para continuar</Typography>
       </Box>
