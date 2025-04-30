@@ -8,11 +8,11 @@ import AppIssue from './AppIssue.jsx';
 
 createRoot(document.getElementById('root')).render(
   <MemoryRouter>
-  <Routes>
-    <Route path="/" element={<App />} />
-    <Route path="/pesquisar" element={<AppSearch />} />
-    <Route path='/direcionar' element={<AppDirect/>}/>
-    <Route path='/emitir' element={<AppIssue/>}/>
-  </Routes>
-</MemoryRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/pesquisar" element={<AppSearch />} />
+      <Route path='/direcionar' element={<AppDirect />} />
+      <Route path='/emitir' element={<AppIssue />} />
+    </Routes>
+  </MemoryRouter>
 )

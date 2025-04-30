@@ -1,15 +1,27 @@
-import { Button, Typography } from "@mui/material"
+import { Avatar, Box, Button, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
+import imagemLogo from '../img/logo1.png'
 
 const AppIssue = () => {
 
     const navigate = useNavigate()
 
-    return(
-       <>
-       <Typography>Emitindo...</Typography> 
-       <Button onClick={() => navigate('/')}>voltar</Button>
-       </>
+    return (
+        <>
+            <Box sx={{
+                backgroundColor: 'red',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                width: '100vw',
+                height: '100vh'
+            }}>
+                <Avatar src={imagemLogo} variant="square" sx={{ width: 400, height: 100, mb: 5 }} ></Avatar>
+                <Typography variant='h4' color='#fff'>Ok, estou emitindo a senha...</Typography>
+                <Button onClick={() => navigate('/direcionar')}>voltar</Button>
+            </Box>
+        </>
     )
 }
 
