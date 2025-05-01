@@ -13,13 +13,19 @@ const AppSearch = () => {
     const navigate = useNavigate()
     const [search, setSearch] = useState({ msg:''})
     const {setor, setSetor} = useSetor()
+    const [open, setOpen] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             const response = await axios.post(`http://localhost:5000/analisar`, search)
-            console.log(response.data)
-            setSetor(response.data)
+            if(response.data === ''){
+                return null
+            }else {
+                setSetor(response.data.setor)
+                navigate('/direcionar')
+            }
+            
         } catch (error) {
             console.log(error, 'nao identificamos o setor')
         }
@@ -52,8 +58,6 @@ const AppSearch = () => {
                     </form>
                 </Box>
             </Box>
-            <Button onClick={() => navigate('/')}>voltar</Button>
-            <Button onClick={() => navigate('/direcionar')}>proximo</Button>
         </>
     )
 }
