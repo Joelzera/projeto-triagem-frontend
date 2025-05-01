@@ -2,10 +2,30 @@ import { Avatar, Box, Button, IconButton, TextField, Typography } from "@mui/mat
 import { useNavigate } from "react-router-dom"
 import imagemLogo from '../img/logo1.png'
 import MicIcon from '@mui/icons-material/Mic';
+import { useState } from 'react';
+import axios from 'axios'
+import { useSetor } from "./SetorContext";
 
 const AppSearch = () => {
 
+    //onClick={() => navigate('/direcionar')}
+
     const navigate = useNavigate()
+    const [search, setSearch] = useState({ msg:''})
+    const {setor, setSetor} = useSetor()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.post(`http://localhost:5000/analisar`, search)
+            console.log(response.data)
+            setSetor(response.data)
+        } catch (error) {
+            console.log(error, 'nao identificamos o setor')
+        }
+    }
+
+    console.log(setor)
 
     return (
         <>
@@ -16,7 +36,8 @@ const AppSearch = () => {
                 <Typography variant='h4'>Olá! como podemos ajudar?</Typography>
                 <Typography variant='h6'>Digite como podemos te ajudar a retirar a senha</Typography>
                 <Box mt={2}>
-                    <TextField size='small' sx={{ width: '250px', mt: 1 }} />
+                    <form onSubmit={handleSubmit}>
+                    <TextField id='msg' size='small' sx={{ width: '250px', mt: 1 }} onChange={(e) => setSearch({...search, msg: e.target.value})}/>
                     <IconButton
                         sx={{
                             backgroundColor: 'red',
@@ -27,7 +48,8 @@ const AppSearch = () => {
                         }}>
                         <MicIcon />
                     </IconButton>
-                    <Button variant='contained' sx={{ backgroundColor: 'red', margin: 1 }} onClick={() => navigate('/direcionar')}> Pesquisar </Button>
+                    <Button type='submit' variant='contained' sx={{ backgroundColor: 'red', margin: 1 }} > Pesquisar </Button>
+                    </form>
                 </Box>
             </Box>
             <Button onClick={() => navigate('/')}>voltar</Button>
