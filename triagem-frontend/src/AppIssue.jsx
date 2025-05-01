@@ -2,9 +2,11 @@ import { Avatar, Box, Button, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 import imagemLogo from '../img/logo1.png'
 
+
 const AppIssue = () => {
 
     const navigate = useNavigate()
+
 
     return (
         <>
@@ -18,7 +20,7 @@ const AppIssue = () => {
                 height: '100vh'
             }}>
                 <Avatar src={imagemLogo} variant="square" sx={{ width: 400, height: 100, mb: 5 }} ></Avatar>
-                <Typography variant='h4' color='#fff'>Ok, estou emitindo a senha...</Typography>
+                <Typography variant='h4' color='#fff'>Ok, estamos emitindo sua senha...</Typography>
                 <Button onClick={() => navigate('/direcionar')}>voltar</Button>
             </Box>
         </>
