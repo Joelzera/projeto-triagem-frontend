@@ -21,7 +21,10 @@ const AppSearch = () => {
             const response = await axios.post(`http://localhost:5000/analisar`, search)
             if(response.data === ''){
                 return null
-            }else {
+            }else if(response.data.setor === 'setor nao indentificado'){
+                return null
+            }
+            else {
                 setSetor(response.data.setor)
                 navigate('/direcionar')
             }
