@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Typography } from '@mui/material';
+import { Avatar, Box, Typography } from '@mui/material';
 import imagem from '../img/logo.png'
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <Box onClick={() => navigate('/pesquisar')} sx={{
-        backgroundColor: 'red',
+        backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

@@ -1,25 +1,21 @@
-import { Avatar, Box, Button, IconButton, TextField, Typography } from "@mui/material"
+import { Avatar, Box, Button, TextField, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 import imagemLogo from '../img/logo1.png'
-import MicIcon from '@mui/icons-material/Mic';
 import { useState } from 'react';
 import axios from 'axios'
 import { useSetor } from "./SetorContext";
 
 const AppSearch = () => {
 
-    //onClick={() => navigate('/direcionar')}
-
     const navigate = useNavigate()
     const [search, setSearch] = useState({ msg:''})
     const {setor, setSetor} = useSetor()
-    const [open, setOpen] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             const response = await axios.post(`http://localhost:5000/analisar`, search)
-            if(response.data === ''){
+            if(response.data.setor === ''){
                 return null
             }else if(response.data.setor === 'setor nao indentificado'){
                 return null
@@ -38,7 +34,7 @@ const AppSearch = () => {
 
     return (
         <>
-            <Box sx={{ backgroundColor: 'red', width: '100vw', height: '70px', top: 0, zIndex: 100, position: 'fixed' }}>
+            <Box sx={{ backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)', width: '100vw', height: '70px', top: 0, zIndex: 100, position: 'fixed' }}>
                 <Avatar src={imagemLogo} variant='square' sx={{ width: '200px', height: '70px', marginLeft: 2 }} ></Avatar>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100vw' }}>
@@ -46,21 +42,12 @@ const AppSearch = () => {
                 <Typography variant='h6'>Digite como podemos te ajudar a retirar a senha</Typography>
                 <Box mt={2}>
                     <form onSubmit={handleSubmit}>
-                    <TextField id='msg' size='small' sx={{ width: '250px', mt: 1 }} onChange={(e) => setSearch({...search, msg: e.target.value})}/>
-                    <IconButton
-                        sx={{
-                            backgroundColor: 'red',
-                            color: 'white',
-                            '&:hover': {
-                                backgroundColor: 'darkred', // cor mais forte ao passar o mouse
-                            }, margin: 1
-                        }}>
-                        <MicIcon />
-                    </IconButton>
-                    <Button type='submit' variant='contained' sx={{ backgroundColor: 'red', margin: 1 }} > Pesquisar </Button>
+                    <TextField id='msg' size='small' sx={{ width: '300px', mt: 1 }} onChange={(e) => setSearch({...search, msg: e.target.value})}/>
+                    <Button type='submit' variant='contained' sx={{ backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)', margin: 1 }} > Pesquisar </Button>
                     </form>
                 </Box>
             </Box>
+  
         </>
     )
 }

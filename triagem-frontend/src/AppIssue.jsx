@@ -5,7 +5,6 @@ import { useState } from "react"
 import { useSetor } from "./SetorContext"
 
 
-
 const AppIssue = () => {
 
     const navigate = useNavigate()
@@ -31,7 +30,7 @@ const AppIssue = () => {
     return (
         <>
             <Box sx={{
-                backgroundColor: 'red',
+                backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -42,7 +41,7 @@ const AppIssue = () => {
                 <Avatar src={imagemLogo} variant="square" sx={{ width: 400, height: 100, mb: 5 }} ></Avatar>
                 <Typography variant='h4' color='#fff'>Ok, estamos emitindo sua senha...</Typography>
                 <Dialog open={open} onClose={handleClose}>
-                    <DialogTitle variant="h5">Setor {setor}</DialogTitle>
+                    <DialogTitle variant="h5">{setor}</DialogTitle>
                     <DialogTitle sx={{ display: 'flex', justifyContent: 'center'}}>Senha: 01</DialogTitle>
                 </Dialog>
             </Box>
