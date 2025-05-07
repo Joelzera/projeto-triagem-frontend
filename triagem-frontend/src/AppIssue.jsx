@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Dialog, DialogTitle, Typography } from "@mui/material"
+import { Avatar, Box, Dialog, DialogTitle, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 import imagemLogo from '../img/logo1.png'
 import { useState } from "react"
