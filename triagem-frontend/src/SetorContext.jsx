@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from "react";
 
-const SetorContext = createContext() //criando o contexto
+const SetorContext = createContext() 
 
 export const SetorProvider = ({children}) => {
     const [setor, setSetor] = useState({})

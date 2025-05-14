@@ -10,15 +10,36 @@ const AppDirect = () => {
 
     return (
         <>
-            <Box sx={{ backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)', width: '100vw', height: '70px', top: 0, zIndex: 100, position: 'fixed' }}>
+            <Box sx={{
+                backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)',
+                width: '100vw',
+                height: '70px',
+                top: 0,
+                zIndex: 100,
+                position: 'fixed'
+            }}>
                 <Avatar src={imagemLogo} variant='square' sx={{ width: '200px', height: '70px', marginLeft: 2 }} ></Avatar>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100vw' }}>
                 <Typography variant='h4'>Isso é feito no Setor de {setor}</Typography>
                 <Typography variant='h4'>Deseja emitir uma senha?</Typography>
                 <Box>
-                    <Button variant='contained' sx={{ backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)', margin: 2 }} onClick={() => navigate('/pesquisar')} >Voltar</Button>
-                    <Button variant='contained' sx={{ backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)', margin: 2 }} onClick={() => navigate('/emitir')} >Confirmar</Button>
+                    <Button
+                        variant='contained'
+                        sx={{
+                            backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)',
+                            margin: 2
+                        }}
+                        onClick={() => navigate('/pesquisar')}
+                    >Voltar</Button>
+                    <Button
+                        variant='contained'
+                        sx={{
+                            backgroundImage: 'linear-gradient(135deg, #cc092f 0%, #cc092f 40%, #bb1570 100%)',
+                            margin: 2
+                        }}
+                        onClick={() => navigate('/emitir')}
+                    >Confirmar</Button>
                 </Box>
             </Box>
         </>
