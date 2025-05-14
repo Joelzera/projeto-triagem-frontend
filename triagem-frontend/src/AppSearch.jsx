@@ -30,8 +30,6 @@ const AppSearch = () => {
         }
     }
 
-    console.log(setor)
-
     const handleClick = (value) => {
         setSetor(value)
         navigate('/direcionar')
@@ -52,7 +50,7 @@ const AppSearch = () => {
                     </form>
                 </Box>
                 <Box sx={{ display: 'flex', gap: 2.5, mt: 3, flexWrap: 'wrap', justifyContent: 'flex-start' }}>
-                    <Card onClick={() => handleClick('Gerência de Atendimentos')}  sx={{ width: '130px', height: '170px', borderBottomRightRadius: '50px', cursor: 'pointer'}}>
+                    <Card onClick={() => handleClick('Gerência de Atendimentos')} sx={{ width: '130px', height: '170px', borderBottomRightRadius: '50px', cursor: 'pointer' }}>
                         <CardContent>
                             <Typography sx={{ color: '#cc092f', fontWeight: 700 }}>Gerência de Atendimento</Typography>
                             <Typography>Financiamento</Typography>
@@ -60,7 +58,7 @@ const AppSearch = () => {
                             <Typography>Abertura de contas</Typography>
                         </CardContent>
                     </Card>
-                    <Card onClick={() => handleClick('Caixas')} sx={{ width: '130px', height: '170px', borderBottomRightRadius: '50px', cursor: 'pointer'}}>
+                    <Card onClick={() => handleClick('Caixas')} sx={{ width: '130px', height: '170px', borderBottomRightRadius: '50px', cursor: 'pointer' }}>
                         <CardContent>
                             <Typography sx={{ color: '#cc092f', fontWeight: 700 }}>Caixas</Typography>
                             <Typography>Pagamentos</Typography>
@@ -68,7 +66,7 @@ const AppSearch = () => {
                             <Typography>Cheques</Typography>
                         </CardContent>
                     </Card>
-                    <Card onClick={() => handleClick('Seguros e Previdência')} sx={{ width: '130px', height: '170px', borderBottomRightRadius: '50px', cursor: 'pointer'}}>
+                    <Card onClick={() => handleClick('Seguros e Previdência')} sx={{ width: '130px', height: '170px', borderBottomRightRadius: '50px', cursor: 'pointer' }}>
                         <CardContent>
                             <Typography sx={{ color: '#cc092f', fontWeight: 700 }}>Seguros e Previdência</Typography>
                             <Typography>Automovel</Typography>
